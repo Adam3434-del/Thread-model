@@ -129,12 +129,37 @@
               "outOfScope": false,
               "isTrustBoundary": false,
               "reasonOutOfScope": "",
-              "hasOpenThreats": false,
+              "hasOpenThreats": true,
               "handlesCardPayment": false,
               "handlesGoodsOrServices": false,
               "isWebApplication": false,
               "privilegeLevel": "",
-              "threats": []
+              "threats": [
+                {
+                  "id": "972ee12f-913b-44a2-9410-f706dc913256",
+                  "title": "Åtkomst till någons konto",
+                  "status": "Open",
+                  "severity": "Medium",
+                  "type": "Information Disclosure",
+                  "description": "Orsak: Lösenord och användarnamn blir beslagtagna. Molntjänst får en läcka. | Konsekvens: Otillåten access till användarens data. | Sannolikhet: Mycket hög (S=4), Konsekvensnivå: Försumbar (K=1), Risknivå: 4",
+                  "mitigation": "Med mängden användare och olika metoder som att använda cookies så är sannolikheten hög.",
+                  "modelType": "CIA",
+                  "number": 0,
+                  "score": "4"
+                },
+                {
+                  "id": "2ec4d8b9-08f3-40b6-bd2a-772a2786614f",
+                  "title": "Molntjänst får en dataläcka.",
+                  "status": "Open",
+                  "severity": "Medium",
+                  "type": "Information Disclosure",
+                  "description": "Orsak: Någon har lyckats komma in i molntjänstens databas. | Konsekvens: Nu har de tillgång till alla användares uppgifter. | Sannolikhet: Låg (S=1), Konsekvensnivå: Allvarlig (K=4), Risknivå: 4",
+                  "mitigation": "Crunchyroll läkte alla sina användares data och anklagade användarna för felet.-Mitt konto var en av de.",
+                  "modelType": "CIA",
+                  "number": 0,
+                  "score": "4"
+                }
+              ]
             }
           },
           {
@@ -252,13 +277,38 @@
               "outOfScope": false,
               "isTrustBoundary": false,
               "reasonOutOfScope": "",
-              "hasOpenThreats": false,
+              "hasOpenThreats": true,
               "isALog": false,
               "isEncrypted": false,
               "isSigned": false,
               "storesCredentials": false,
               "storesInventory": false,
-              "threats": []
+              "threats": [
+                {
+                  "id": "161aad87-381e-44bf-b5c9-3353a84cbdcb",
+                  "title": "Databasläcka.",
+                  "status": "Open",
+                  "severity": "High",
+                  "type": "Information Disclosure",
+                  "description": "Orsak: Ett bug som gör att kunders info inte är isolerade för den specifika kunde. Administratörskontot blir tagen.  Ex sql injection eller ett virus I administratörens dator. | Konsekvens: Känslig data kan nu bli stulen. | Sannolikhet: Medelhög (S=2), Konsekvensnivå: Allvarlig (K=4), Risknivå: 5",
+                  "mitigation": "",
+                  "modelType": "CIA",
+                  "number": 0,
+                  "score": "5"
+                },
+                {
+                  "id": "3ee6006b-1307-46f5-a07a-3c376ed92481",
+                  "title": "Administratören raderar information eller strukturen på databasen.",
+                  "status": "Open",
+                  "severity": "High",
+                  "type": "Tampering",
+                  "description": "Orsak: En administratör som har för mycket makt över databasen kan med mening eller ovasiktligt radera eller lägga tills saker I databasen som inte ska va där. | Konsekvens: Om administratören raderar databasen kan problemet blir katastrofalt om ingen backup är där. | Sannolikhet: Medelhög (S=2), Konsekvensnivå: Allvarlig (K=4), Risknivå: 5",
+                  "mitigation": "",
+                  "modelType": "CIA",
+                  "number": 0,
+                  "score": "5"
+                }
+              ]
             }
           },
           {
@@ -607,12 +657,37 @@
               "outOfScope": false,
               "isTrustBoundary": false,
               "reasonOutOfScope": "",
-              "hasOpenThreats": false,
+              "hasOpenThreats": true,
               "handlesCardPayment": false,
               "handlesGoodsOrServices": false,
               "isWebApplication": false,
               "privilegeLevel": "",
-              "threats": []
+              "threats": [
+                {
+                  "id": "da072e07-6393-451b-adca-b9e489efd19a",
+                  "title": "Allt är kopplat till kundhantering så om den går ner följer systemet.",
+                  "status": "Open",
+                  "severity": "Medium",
+                  "type": "Denial of Service",
+                  "description": "Orsak: En edge case eller någon som på något sätt bidrog dålig kod I systemet. | Konsekvens: Hela systemet har slutat att fungera och kanske inte kommer fungera I några dagar. | Sannolikhet: Medelhög (S=2), Konsekvensnivå: Måttlig (K=2), Risknivå: 3",
+                  "mitigation": "Den ändra förlusten är nog tid.",
+                  "modelType": "CIA",
+                  "number": 0,
+                  "score": "3"
+                },
+                {
+                  "id": "fd1ac66b-8b8b-4934-a118-ddda57c7be45",
+                  "title": "Användaren får fel kontorsenhet",
+                  "status": "Open",
+                  "severity": "Low",
+                  "type": "Tampering",
+                  "description": "Orsak: Användaren råkar lägga in fel info. | Konsekvens: Fel kontorsenhet för kunden. | Sannolikhet: Medelhög (S=2), Konsekvensnivå: Försumbar (K=1), Risknivå: 2",
+                  "mitigation": "",
+                  "modelType": "CIA",
+                  "number": 0,
+                  "score": "2"
+                }
+              ]
             }
           },
           {
@@ -921,12 +996,25 @@
               "outOfScope": false,
               "isTrustBoundary": false,
               "reasonOutOfScope": "",
-              "hasOpenThreats": false,
+              "hasOpenThreats": true,
               "isBidirectional": true,
               "isEncrypted": false,
               "isPublicNetwork": false,
               "protocol": "",
-              "threats": [],
+              "threats": [
+                {
+                  "id": "1fb8a52b-fbd8-4c9a-affe-d9bc82fbe398",
+                  "title": "Användaren kan matta in fel information till databasen.",
+                  "status": "Open",
+                  "severity": "Low",
+                  "type": "Tampering",
+                  "description": "Orsak: Användaren bestämmer sig för att inte ge information som stämmer. | Konsekvens: Förfalskninga av information. | Sannolikhet: Medelhög (S=2), Konsekvensnivå: Försumbar (K=1), Risknivå: 2",
+                  "mitigation": "",
+                  "modelType": "CIA",
+                  "number": 0,
+                  "score": "2"
+                }
+              ],
               "trustBoundaryIds": []
             },
             "labels": [
@@ -1386,12 +1474,25 @@
               "outOfScope": false,
               "isTrustBoundary": false,
               "reasonOutOfScope": "",
-              "hasOpenThreats": false,
+              "hasOpenThreats": true,
               "handlesCardPayment": false,
               "handlesGoodsOrServices": false,
               "isWebApplication": false,
               "privilegeLevel": "",
-              "threats": []
+              "threats": [
+                {
+                  "id": "24c4809f-b9f0-41fa-bdfa-7922c411a8a2",
+                  "title": "fakturasystemet manipuleras på fel sätt.",
+                  "status": "Open",
+                  "severity": "Medium",
+                  "type": "Tampering",
+                  "description": "Orsak: Hur verifierar fakturasystemet vem som får fakturan och hur mycket. Någon kan möjligtvis ändra eller hitta ett bug för det. | Sannolikhet: Låg (S=1), Konsekvensnivå: Allvarlig (K=4), Risknivå: 4",
+                  "mitigation": "",
+                  "modelType": "CIA",
+                  "number": 0,
+                  "score": "4"
+                }
+              ]
             }
           }
         ]
